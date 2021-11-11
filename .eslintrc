@@ -1,0 +1,13 @@
+{
+    "root": true,
+    "plugins": [
+
+    ],
+    "extends": [
+        "eslint:recommended"
+    ],
+    "rules": {
+        "vue/valid-v-slot": "off",
+        "vue/custom-event-name-casing": "off",
+    }
+}
