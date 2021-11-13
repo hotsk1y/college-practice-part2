@@ -1,17 +1,14 @@
 <template>
-<!--  <Day1/>-->
-  <Converter />
+  <Day2/>
 </template>
 
 <script>
-import Day1 from '@/components/Day1/Day1.vue'
-import Converter from '@/components/Day1/Converter'
+import Day2 from '@/components/Day2/Day2.vue'
 
 export default {
   name: 'App',
   components: {
-    Day1,
-    Converter
+    Day2,
   },
 }
 </script>
