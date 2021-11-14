@@ -1,14 +1,14 @@
 <template>
-  <Day2/>
+  <Day3 />
 </template>
 
 <script>
-import Day2 from '@/components/Day2/Day2.vue'
+import Day3 from '@/components/Day3/Day3.vue'
 
 export default {
   name: 'App',
   components: {
-    Day2,
+    Day3,
   },
 }
 </script>
