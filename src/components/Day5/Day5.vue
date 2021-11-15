@@ -9,7 +9,7 @@
           v-model='query'
           @keypress.enter='fetchWeather($event)'
         >
-        <button>Search</button>
+        <button @click='fetchWeather'>Search</button>
       </div>
 
       <div class='info' v-if='typeof weather.main != "undefined"'>
@@ -123,15 +123,13 @@ p {
   display: flex;
   margin-bottom: 40px;
 }
-.input input {
-
-}
 .input button {
   border: none;
   padding: 0 10px;
   margin-left: -10px;
   background: #222222;
   color: #fff;
+  cursor: pointer;
 }
 
 .fav {
