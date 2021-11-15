@@ -1,14 +1,14 @@
 <template>
-  <Day2/>
+  <Day5/>
 </template>
 
 <script>
-import Day2 from '@/components/Day2/Day2.vue'
+import Day5 from '@/components/Day5/Day5.vue'
 
 export default {
   name: 'App',
   components: {
-    Day2,
+    Day5,
   },
 }
 </script>
@@ -18,5 +18,11 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #222;
+  color: #fff;
 }
 </style>
