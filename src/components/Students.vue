@@ -1,5 +1,21 @@
 <template>
-  <div class='container'>
+  <div class='container' :class="getTheme === 'dark' ? 'dark' : 'standart'">
+
+    <div>
+      <input
+        type="radio"
+        name="theme"
+        :checked="getTheme === 'default'"
+        @change="setTheme('default')"
+      />Стандартная
+      <input
+        type="radio"
+        name="theme"
+        :checked="getTheme === 'dark'"
+        @change="setTheme('dark')"
+      />Тёмная
+    </div>
+
     <div class='newStudent card'>
       <p v-if='!isEditing' class='card__item'><b>Добавить нового студента</b></p>
       <p v-if='isEditing' class='card__item'><b>Обновить студента</b></p>
@@ -38,6 +54,8 @@
     </div>
     <p v-if='searchStud().length == 0' class='bold'>Результатов не найдено</p>
 
+    <p>Всего студентов: {{ studentsCount }}</p>
+
   </div>
 </template>
 
@@ -59,7 +77,8 @@ export default {
     axios.get('http://46.101.212.195:3000/students')
         .then(res => {
           this.students = res.data;
-        });
+        })
+        .then(() => this.$store.commit("setCount", this.students.length));
   },
   methods: {
     deleteStud(id) {
@@ -120,7 +139,21 @@ export default {
       this.newIsDonePr = false;
       this.isEditing = false;
     },
+
+    setTheme (theme) {
+      this.$store.commit("setTheme", theme);
+    },
   },
+
+  computed: {
+    studentsCount () {
+      return this.$store.getters.getCount;
+    },
+
+    getTheme () {
+      return (this.currentTheme = this.$store.getters.getTheme);
+    },
+  }
 };
 </script>
 
@@ -161,5 +194,17 @@ p {
 .editBtn img {
   width: 20px;
   height: 20px;
+}
+
+.dark {
+  background: #333;
+  color: #fff;
+}
+.dark a {
+  color: #fff;
+}
+
+.standart {
+  background: #fff;
 }
 </style>
