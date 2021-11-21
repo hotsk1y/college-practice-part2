@@ -1,16 +1,19 @@
 {
+  "name": "express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.15"
   },
-  "name": "lesson",
-  "version": "1.0.0",
-  "main": "http-server.js",
-  "devDependencies": {},
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "hotskiy",
-  "license": "ISC",
-  "description": ""
+  "author": "hotsk1y",
+  "license": "ISC"
 }
