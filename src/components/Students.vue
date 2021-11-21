@@ -45,7 +45,7 @@
         <input v-model='st.isDonePr' type='checkbox' />
         <span>{{ st.isDonePr ? 'Сдал(а)' : 'Не сдал(а)' }}</span>
       </div>
-      <button @click='deleteStud(st._id)' class='editBtn'>
+      <button @click='deleteStud(st._id)' class='editBtn' >
         <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/OOjs_UI_icon_trash.svg/1200px-OOjs_UI_icon_trash.svg.png' alt=''>
       </button>
       <button @click='updateForm(st)' class='editBtn'>
@@ -151,7 +151,11 @@ export default {
     },
 
     getTheme () {
-      return (this.currentTheme = this.$store.getters.getTheme);
+      return this.$store.getters.getTheme;
+    },
+
+    getCurrentUser() {
+      return this.$store.getters.getUser;
     },
   }
 };
